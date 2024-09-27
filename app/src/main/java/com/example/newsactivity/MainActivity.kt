@@ -1,6 +1,7 @@
 package com.example.newsactivity
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,24 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
-            showFirstFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, HeadlinesFragment())
+                .commit()
         }
-    }
-
-    private fun showFirstFragment() {
-        val firstFragment = HeadlinesFragment()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.portraitFirstContainer, firstFragment)
-            .commit()
-    }
-
-    fun onItemSelected(item: String) {
-        val secondFragment = ContentFragment().apply {
-            setDetailText(item)
-        }
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.portraitFirstContainer, secondFragment)
-            .addToBackStack(null)  // Add to back stack if you want to navigate back
-            .commit()
     }
 }

@@ -6,20 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
 
+    tools:context=".MainActivity">
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/landFirstContainer"
+        android:id="@+id/headlinesFragment"
         android:layout_width="0dp"
         android:padding="10dp"
         android:layout_weight="1"
-        android:background="@color/black"
+        android:background="@color/white"
         android:layout_height="match_parent"/>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/landSecondContainer"
+        android:id="@+id/contentFragment"
         android:padding="10dp"
-        android:background="#F00"
+        android:background="@color/white"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"/>
